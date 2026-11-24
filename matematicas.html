@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herramientas de IA para la Educación Matemática · Galería · Universidad del Magdalena</title>
+<meta name="description" content="Galería de recursos digitales del curso Herramientas de Inteligencia Artificial para la Educación Matemática, Licenciatura en Matemáticas, Universidad del Magdalena.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07101f; --panel:#0f1b33; --panel2:#15264a;
+  --amber:#ffc83d; --mint:#3ee6b0; --coral:#ff7a6b; --sky:#6cb8ff;
+  --text:#f4f7ff; --muted:#b4c2e6; --line:rgba(130,170,255,.25);
+  --display:'Unbounded','Trebuchet MS',sans-serif; --body:'Outfit','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,5vw,64px);border-bottom:1px solid var(--line);background:rgba(7,16,31,.85);backdrop-filter:blur(10px);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo{height:44px;width:auto;display:block}
+.logo-fallback{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--amber);place-items:center;font-family:var(--display);font-size:13px;color:var(--amber)}
+.brand b{font-family:var(--display);font-weight:500;font-size:13px;line-height:1.25}
+.brand span{display:block;font-family:var(--body);font-weight:300;font-size:12.5px;color:var(--muted)}
+.top .tag{font-family:var(--display);font-size:13px;color:var(--amber);border:1px solid var(--amber);border-radius:99px;padding:6px 14px;white-space:nowrap}
+
+.hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px;padding:clamp(40px,7vw,90px) clamp(16px,5vw,64px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border:1px solid var(--line);border-radius:99px;background:rgba(21,38,74,.85);font-size:14.5px;color:var(--text)}
+.chip i{font-style:normal;font-family:var(--display);font-size:14px;color:var(--c)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.9vw,60px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance}
+h1 .glow{background:linear-gradient(95deg,var(--amber),var(--mint) 55%,var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-top:6px}
+.lead{max-width:58ch;margin-top:22px;color:var(--muted);font-size:clamp(16px,1.6vw,19px)}
+.course{display:inline-flex;align-items:center;gap:14px;margin-top:30px;padding:12px 20px 12px 14px;border:1px solid var(--line);border-radius:16px;background:rgba(15,27,51,.92)}
+.course svg{width:38px;height:38px;flex:none}
+.course small{display:block;color:var(--muted);font-size:13px;line-height:1.2}
+.course strong{font-weight:600;font-size:17px}
+.hero-viz{display:grid;place-items:center}
+.plane{width:min(100%,430px);background:rgba(15,27,51,.78);border:1px solid var(--line);border-radius:26px;padding:10px;box-shadow:0 0 60px -20px rgba(62,230,176,.35)}
+.draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 3.2s ease forwards}
+.d2{animation-delay:.6s}.d3{animation-delay:1.2s}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+section.gallery{padding:clamp(40px,6vw,80px) clamp(16px,5vw,64px)}
+.sec-head{max-width:1200px;margin:0 auto 36px;display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(24px,3.4vw,38px)}
+.sec-head p{color:var(--muted);max-width:46ch}
+.grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
+.card{--ac:var(--amber);position:relative;display:flex;flex-direction:column;padding:26px;border-radius:22px;border:1px solid var(--line);
+  background:
+   linear-gradient(rgba(130,170,255,.07) 1px,transparent 1px) 0 0/22px 22px,
+   linear-gradient(90deg,rgba(130,170,255,.07) 1px,transparent 1px) 0 0/22px 22px,
+   linear-gradient(160deg,var(--panel2),var(--panel) 60%);
+  transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:nth-child(4n+2){--ac:var(--mint)}.card:nth-child(4n+3){--ac:var(--coral)}.card:nth-child(4n+4){--ac:var(--sky)}
+.card::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:4px;border-radius:0 4px 4px 0;background:var(--ac)}
+.card:hover{transform:translateY(-6px);border-color:var(--ac);box-shadow:0 18px 46px -18px var(--ac)}
+.num{position:absolute;top:18px;right:22px;font-family:var(--display);font-size:13px;color:var(--ac)}
+.ico{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;background:rgba(7,16,31,.7);border:1.5px solid var(--ac);color:var(--ac)}
+.ico svg{width:34px;height:34px}
+.card h3{font-family:var(--display);font-weight:500;font-size:20px;line-height:1.25;margin-bottom:10px}
+.card p{color:var(--muted);font-size:16px;flex:1}
+.team{margin:18px 0 22px;padding-top:14px;border-top:1px dashed var(--line);font-size:15.5px}
+.team small{display:block;color:var(--muted);font-size:13px}
+.team span{display:block;font-weight:600}
+.m-btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:600;font-size:16px;color:#07101f;background:var(--ac);transition:filter .2s,transform .2s}
+.m-btn svg{width:28px;height:28px;flex:none}
+.m-btn:hover{filter:brightness(1.1);transform:scale(1.02)}
+.m-btn:hover .curve{animation:draw2 .9s ease}
+@keyframes draw2{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+.curve{stroke-dasharray:60}
+
+footer{border-top:1px solid var(--line);padding:32px clamp(16px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:15px;background:rgba(7,16,31,.9)}
+footer .brand b{font-size:12px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}.hero-viz{order:-1}.plane{width:min(80%,320px)}
+  .brand b span,.top .tag{display:none}
+}
+@media (prefers-reduced-motion:reduce){.draw{animation:none;stroke-dashoffset:0}.card,.m-btn{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tri" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 40 24 8l18 32H6Z"/><path d="M24 8v32M15 40a9 9 0 0 1 4-7"/></symbol>
+    <symbol id="i-fx" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42V6M6 42h38"/><path d="M10 36C18 36 20 12 28 14s8 20 14 22"/><circle cx="28" cy="14" r="2.4" fill="currentColor"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 42h36"/><rect x="9" y="26" width="6" height="16" rx="1"/><rect x="21" y="12" width="6" height="30" rx="1"/><rect x="33" y="20" width="6" height="22" rx="1"/></symbol>
+    <symbol id="i-sq" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18l12 14M18 18 6 32"/><path d="M28 24c0-4 3-6 6-6s6 2 6 5-3 4-6 6l-6 4h12"/></symbol>
+    <symbol id="i-int" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M28 8c-5-3-8 0-8 5v22c0 5-3 8-8 5"/><path d="M32 20h8M32 30h8"/></symbol>
+    <symbol id="i-pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h32M16 14v22M32 14c0 10-1 16 6 22"/></symbol>
+    <symbol id="i-sigma" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M38 10H12l14 14-14 14h26"/></symbol>
+    <!-- Botón: ejes + curva + destello IA -->
+    <symbol id="b-fx" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28V6M4 28h24"/><path class="curve" d="M7 23c5 0 5-12 10-12s5 8 10 8"/><path d="M25 3v6M22 6h6" stroke-width="2"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="brand" href="#inicio">
+    <img class="logo" src="logo-unimagdalena.png" alt="Logo Universidad del Magdalena" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <span class="logo-fallback">UM</span>
+    <b>Universidad del Magdalena<span>Licenciatura en Matemáticas</span></b>
+  </a>
+  <span class="tag">f(x) · Σ · π · ∫</span>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div>
+      <div class="chips" aria-label="Áreas">
+        <span class="chip" style="--c:var(--amber)"><i>x²</i>Álgebra</span>
+        <span class="chip" style="--c:var(--mint)"><i>△</i>Geometría</span>
+        <span class="chip" style="--c:var(--coral)"><i>f(x)</i>Funciones</span>
+        <span class="chip" style="--c:var(--sky)"><i>Σ</i>Estadística</span>
+        <span class="chip" style="--c:var(--amber)"><i>∫</i>Cálculo</span>
+      </div>
+      <h1>Herramientas de Inteligencia Artificial <span class="glow">para la Educación Matemática</span></h1>
+      <p class="lead">Laboratorios, calculadoras y recorridos interactivos creados por los estudiantes de la Licenciatura en Matemáticas para enseñar y aprender con ayuda de la inteligencia artificial.</p>
+      <div class="course">
+        <svg viewBox="0 0 48 48" style="color:var(--amber)"><use href="#i-pi"/></svg>
+        <div><small>Curso · Licenciatura en Matemáticas</small><strong>Herramientas de IA para la Educación Matemática</strong></div>
+      </div>
+    </div>
+    <div class="hero-viz" aria-hidden="true">
+      <svg class="plane" viewBox="0 0 400 400" fill="none">
+        <g stroke="rgba(130,170,255,.2)" stroke-width="1">
+          <path d="M0 40h400M0 80h400M0 120h400M0 160h400M0 240h400M0 280h400M0 320h400M0 360h400"/>
+          <path d="M40 0v400M80 0v400M120 0v400M160 0v400M240 0v400M280 0v400M320 0v400M360 0v400"/>
+        </g>
+        <g stroke="#b4c2e6" stroke-width="2"><path d="M12 200h376M200 388V12"/><path d="M388 200l-9-5v10zM200 12l-5 9h10z" fill="#b4c2e6"/></g>
+        <path class="draw" d="M70 60Q200 340 330 60" stroke="#ffc83d" stroke-width="4" stroke-linecap="round"/>
+        <path class="draw d2" d="M20 200C80 90 120 90 200 200S320 310 380 200" stroke="#3ee6b0" stroke-width="4" stroke-linecap="round"/>
+        <circle class="draw d3" cx="290" cy="290" r="60" stroke="#6cb8ff" stroke-width="3.5"/>
+        <path class="draw d3" d="M60 350l60-100 60 100z" stroke="#ff7a6b" stroke-width="3.5" stroke-linejoin="round"/>
+        <circle r="7" fill="#fff"><animateMotion dur="6s" repeatCount="indefinite" path="M20 200C80 90 120 90 200 200S320 310 380 200"/></circle>
+        <g fill="#f4f7ff" font-family="Unbounded,sans-serif" font-size="16"><text x="262" y="70">y = x²</text><text x="30" y="60" fill="#3ee6b0">sen x</text></g>
+      </svg>
+    </div>
+  </div>
+
+  <section class="gallery" id="trabajos">
+    <div class="sec-head">
+      <h2>Trabajos de los estudiantes</h2>
+      <p>Cada tarjeta abre una herramienta interactiva. Explórala, cambia los valores y observa cómo responde.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <a class="brand" href="#inicio">
+    <img class="logo" src="logo-unimagdalena.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <span class="logo-fallback">UM</span>
+    <b>Universidad del Magdalena<span>Santa Marta, Colombia</span></b>
+  </a>
+  <span>Herramientas de IA para la Educación Matemática · Licenciatura en Matemáticas</span>
+</footer>
+
+<script>
+/* ====== DATOS: edita aquí títulos, descripciones y enlaces ====== */
+const TRABAJOS = [
+  { titulo:"Obra Geo", desc:"Recurso de geometría interactivo para construir, observar y analizar figuras y sus propiedades.",
+    integrantes:["Jonaidys Paola Anaya Mercado"], url:"https://jonaanaya0605-stack.github.io/Obra_Geo.2/", icono:"i-tri" },
+  { titulo:"Función Lab", desc:"Laboratorio para explorar funciones: cambia los parámetros y observa cómo se transforma la gráfica.",
+    integrantes:["Joan David Arzuza Borja"], url:"https://raw.githack.com/zaratustra-05/funcion-lab/main/dist/index.html", icono:"i-fx" },
+  { titulo:"Matema 2.0", desc:"Herramienta de apoyo para aprender matemáticas de forma dinámica con ayuda de la inteligencia artificial.",
+    integrantes:["Mabel Consuelo Barragán Caballero","Jhon Fausto Fragozo Álvarez"], url:"https://jhonffa.github.io/Matema-2.0/", icono:"i-pi" },
+  { titulo:"Bahía Recta Funciones", desc:"Recorrido interactivo para comprender la recta y las funciones lineales a través de situaciones y gráficas.",
+    integrantes:["Valentina Barrera Sánchez"], url:"https://valebarrerasanchez.github.io/Bahia_Recta_Funciones/", icono:"i-fx" },
+  { titulo:"Triad Transform Lab", desc:"Laboratorio de transformaciones para visualizar cómo cambian las figuras y las funciones.",
+    integrantes:["Leonardo Isaac Barrios Marchena"], url:"https://triad-transform-lab.lovable.app/", icono:"i-tri" },
+  { titulo:"Dominando la Factorización", desc:"Práctica guiada de factorización con ejemplos y ejercicios para dominar cada caso paso a paso.",
+    integrantes:["Milena Patricia Cardona Manjarres","Oscar Emilio Goenaga Utria"], url:"https://oegoenagau-beep.github.io/Dominando-la-factorizacion/", icono:"i-sq" },
+  { titulo:"GeoStats", desc:"Geometría y estadística en un mismo espacio: datos, gráficos y figuras para analizar e interpretar.",
+    integrantes:["Carlos Mario Cortes Tapia"], url:"https://carlosmariocortes509.github.io/geostats/", icono:"i-bars" },
+  { titulo:"RevoluMath", desc:"Experiencia interactiva que renueva la manera de aprender y practicar matemáticas.",
+    integrantes:["Carlos Mario Cortes Tapia","Waldo Luis Viloria Bastidas"], url:"https://profe-waldo-viloria.github.io/RevoluMathh/", icono:"i-int" },
+  { titulo:"Math Odyssey", desc:"Un viaje de retos matemáticos por niveles para practicar y reforzar conceptos de forma divertida.",
+    integrantes:["Gissela López Barrera","Inés Mercedes Narváez Sánchez"], url:"https://lopezbarreragissela-ai.github.io/MathOdyssey./", icono:"i-sigma" },
+  { titulo:"Transform Three Lab", desc:"Laboratorio de transformaciones geométricas para experimentar con movimientos y cambios de escala.",
+    integrantes:["Iván de Jesús Pedrozo Valverde"], url:"https://transform-three-lab.lovable.app/", icono:"i-tri" },
+  { titulo:"Algebrario", desc:"Calculadora y recursos de álgebra para resolver, verificar y comprender procedimientos.",
+    integrantes:["Sergio Andrés Rodríguez Beltrán"], url:"https://serobel1412.github.io/Algebrario/calculadora", icono:"i-sq" },
+  { titulo:"Laboratorio de Precálculo", desc:"Espacio para explorar los temas de precálculo: funciones, gráficas y sus propiedades.",
+    integrantes:["Santiago Andrés Sanabria Montoya"], url:"https://santiagosanabria141.github.io/precalculo-laboratorio/", icono:"i-fx" }
+];
+
+const grid = document.getElementById('grid');
+TRABAJOS.forEach((t,k)=>{
+  const c = document.createElement('article');
+  c.className = 'card';
+  const quien = t.integrantes.length>1 ? 'Integrantes' : 'Integrante';
+  c.innerHTML = `
+    <span class="num">${String(k+1).padStart(2,'0')}</span>
+    <div class="ico"><svg><use href="#${t.icono}"/></svg></div>
+    <h3></h3><p></p>
+    <div class="team"><small>${quien}</small>${t.integrantes.map(()=>`<span></span>`).join('')}</div>
+    <a class="m-btn" target="_blank" rel="noopener"><svg><use href="#b-fx"/></svg>Abrir herramienta</a>`;
+  c.querySelector('h3').textContent = t.titulo;
+  c.querySelector('p').textContent = t.desc;
+  c.querySelectorAll('.team span').forEach((s,i)=>s.textContent=t.integrantes[i]);
+  c.querySelector('a').href = t.url;
+  grid.appendChild(c);
+});
+
+/* ====== Fondo: plano cartesiano con ondas y símbolos flotantes ====== */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const bg = document.getElementById('bg'), bx = bg.getContext('2d');
+const SYM = ['π','Σ','∫','√','Δ','θ','∞','x²','sen','≈','%','△','○','□','f(x)','μ','σ','∂'];
+let W,H,S=[],t=0;
+function size(){
+  W=bg.width=innerWidth;H=bg.height=innerHeight;
+  S=Array.from({length:Math.min(26,Math.floor(W*H/42000))},(_,i)=>({
+    s:SYM[i%SYM.length],x:Math.random()*W,y:Math.random()*H,v:.12+Math.random()*.25,
+    f:18+Math.random()*34,a:.07+Math.random()*.09,c:['#ffc83d','#3ee6b0','#ff7a6b','#6cb8ff'][i%4]}));
+}
+function frame(){
+  bx.clearRect(0,0,W,H);
+  /* cuadrícula */
+  bx.strokeStyle='rgba(130,170,255,.07)';bx.lineWidth=1;
+  for(let x=0;x<W;x+=48){bx.beginPath();bx.moveTo(x,0);bx.lineTo(x,H);bx.stroke();}
+  for(let y=0;y<H;y+=48){bx.beginPath();bx.moveTo(0,y);bx.lineTo(W,y);bx.stroke();}
+  /* ejes */
+  bx.strokeStyle='rgba(180,194,230,.16)';bx.lineWidth=1.5;
+  bx.beginPath();bx.moveTo(0,H*.5);bx.lineTo(W,H*.5);bx.moveTo(W*.5,0);bx.lineTo(W*.5,H);bx.stroke();
+  /* ondas */
+  [['rgba(62,230,176,.16)',60,.012,0],['rgba(255,200,61,.13)',36,.02,2],['rgba(108,184,255,.13)',90,.007,4]].forEach(([col,A,k,ph])=>{
+    bx.strokeStyle=col;bx.lineWidth=2.5;bx.beginPath();
+    for(let x=0;x<=W;x+=6){const y=H*.5-Math.sin(x*k+t+ph)*A;x?bx.lineTo(x,y):bx.moveTo(x,y);}
+    bx.stroke();
+  });
+  /* símbolos */
+  bx.textAlign='center';
+  for(const p of S){
+    bx.globalAlpha=p.a;bx.fillStyle=p.c;bx.font=`${p.f}px Unbounded, sans-serif`;bx.fillText(p.s,p.x,p.y);
+    if(!reduce){p.y-=p.v;if(p.y<-40){p.y=H+40;p.x=Math.random()*W;}}
+  }
+  bx.globalAlpha=1;
+  if(!reduce){t+=.012;requestAnimationFrame(frame);}
+}
+addEventListener('resize',()=>{size();if(reduce)frame()});size();frame();
+</script>
+</body>
+</html>
